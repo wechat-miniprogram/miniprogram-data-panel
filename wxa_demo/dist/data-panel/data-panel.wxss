@@ -1,0 +1,177 @@
+
+page {
+  --theme-color: #07c160;
+  --theme-color-bg:  rgba(7, 193, 96, 0.1);
+  --chart-height: 500rpx;
+  --fenbu-chart-height: 600rpx;
+}
+
+@import '../theme.wxss';
+
+.wxadata-container {
+  border-radius: 8px;
+
+  padding: 24px 32rpx 20px 32rpx;
+  /* padding: 48rpx 32rpx 48rpx 32rpx; */
+  margin: 0 8px 12px 8px;
+  background: #FFFFFF;}
+  .wxadata-container picker {
+    display: inline-block; }
+  .wxadata-container .picker {
+    display: inline-block; }
+  .wxadata-container picker[mode=date] .picker {
+    margin-right: 16rpx; }
+  .wxadata-container .header {
+    position: relative;
+    margin-bottom: 48rpx; }
+    .wxadata-container .header .title {
+      opacity: 0.9;
+      font-family: PingFangSC-Medium;
+      font-size: 30rpx;
+      color: #000000;
+      letter-spacing: 0;
+      line-height: 42rpx;
+    }
+  .wxadata-container .body .tit-1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 53rpx; }
+    .wxadata-container .body .tit-1 view {
+      display: inline-block;
+      border-radius: 8rpx;
+      border-radius: 8rpx;
+      font-family: PingFangSC-Regular;
+      font-size: 28rpx;
+      letter-spacing: 0;
+      height: 64rpx;
+      text-align: center;
+      line-height: 64rpx;
+      width: 216rpx;
+      background: #F7F7F7;
+      opacity: 0.7;
+      font-family: PingFangSC-Regular;
+      font-size: 28rpx;
+      color: #000000; }
+    .wxadata-container .body .tit-1 .active {
+      color: var(--theme-color);
+      background:var(--theme-color-bg); 
+    }
+  .wxadata-container .body .tit-2 .lab {
+    overflow: hidden;
+    margin-bottom: 33rpx; }
+  .wxadata-container .body .tit-2 .lab-1 {
+    opacity: 0.3;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #000000;
+    line-height: 40rpx;
+    display: inline-block;
+    margin-right: 48rpx;
+    float: left; }
+  .wxadata-container .body .tit-2 .lab-2 view {
+    display: inline-block;
+    float: left;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 24rpx;
+    border-radius: 24rpx;
+    padding-left: 24rpx;
+    padding-right: 24rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #000000;
+    opacity: 0.7;
+    text-align: center;
+    line-height: 48rpx;
+    height: 48rpx;
+    margin-right: 16rpx; }
+  .wxadata-container .body .tit-2 .lab-2 .active {
+    color: var(--theme-color);
+    background: var(--theme-color-bg); }
+  .wxadata-container .body .tit-2 .lab-3 {
+    opacity: 0.7;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #000000;
+    text-align: center;
+    display: inline-block;
+    float: left;
+    line-height: 40rpx; }
+    .wxadata-container .body .tit-2 .lab-3 text {
+      display: inline-block;
+      margin-left: 18rpx;
+      margin-right: 20rpx; }
+  .wxadata-container .body .tit-2 .toTime {
+    margin-top: 33rpx;
+    margin-left: 144rpx; }
+  .wxadata-container .body .arrow {
+    width: 20rpx;
+    height: 20rpx;
+    vertical-align: middle;
+    margin-left: 8rpx; }
+
+
+  .wxadata-container .tips {
+    width: 34rpx;
+    height: 34rpx;
+    float: right; }
+
+  .header-desc{
+    margin-left: 18rpx;
+    color: #000000;
+    opacity: 0.7;
+    font-size: 20rpx;
+  }
+
+  .header-icon {
+    /* margin-left: 200rpx;
+    text-align: right;
+    color: #000000;
+    opacity: 0.3;
+    font-size: 20rpx; */
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    float: right;
+  }
+
+  .header-icon-click{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: -4px;
+    top: -4px;
+    /* background-color: rgba(7, 193, 96, 0.1); */
+  }
+
+  .chartItem-label {
+    opacity: 0.9;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    margin-top: 30rpx;
+    margin-bottom: 15rpx;
+    color: #5a5858;
+    letter-spacing: 0;
+    line-height: 42rpx;
+  }
+
+
+  .chart {
+    margin-top: 20rpx;
+    height: var(--chart-height);
+    width: 100%;
+   }
+
+  .chart-fenbu {
+    margin-top: 20rpx;
+    height: var(--fenbu-chart-height);
+    width: 100%;
+    /* background-color: #F7F7F7; */
+   }
+
+
+  .chart-ext {
+    margin-top: 20rpx;
+    width: 100%;
+    /* background-color: #F7F7F7; */
+   }

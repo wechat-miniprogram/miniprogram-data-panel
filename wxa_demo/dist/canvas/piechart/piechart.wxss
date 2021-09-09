@@ -1,0 +1,22 @@
+
+
+@import '../table//table.wxss';
+
+@import '../chart_legend.wxss';
+
+.tips-warm {
+  font-family: 'PingFangSC-Regular','Microsoft Yahei';
+  font-size: 24rpx;
+  color: #888888;
+
+  line-height: 350rpx;
+  vertical-align: middle;
+
+  width: calc(100vw - 64rpx);
+  text-align: center;
+  
+  position: absolute;
+  z-index: 100;
+
+  background-color: #ffffff;
+}

@@ -1,0 +1,76 @@
+<!-- <view class="status-header">
+  <text class="lab-1">昨日数据</text>
+  <text class="lab-2">更新至</text>
+  <text class="lab-2">2019/08/06 18:00</text>
+</view> -->
+<view>
+  <block wx:if="{{ret === 'succ'}}">
+    <block wx:if="{{cardStyle === 'default'}}">
+      <!-- 样式一：田字形模式 -->
+      <view wx:for="{{rowInfo}}" wx:for-item="rowItem" wx:key="index">
+        <view class="status-content-number {{index > 0 ?'top-30':''}}" wx:if="{{!isShowAddMoreBtn || index === 0}}">
+          <view wx:for="{{rowItem}}" wx:for-item="item" class="status-content-number-td" wx:key="label">
+            <view class="status-content-number-v1">
+              <text>{{item.label}}</text>
+            </view>
+            <view class="status-content-number-v2">
+              <text class="{{item.isMoney?'status-content-money':''}}">
+                {{item.value}}{{item.valueUnit}}
+              </text>
+            </view>
+            <block wx:for="{{item.ext}}" wx:for-item="extItem" wx:key="label">
+              <!-- class: increase decrease -->
+              <view class="status-content-number-v3">
+                <text class="content-label">{{extItem.label}}</text>
+                <text class="content-value {{extItem.color}}">
+                  {{extItem.value === '-'?'-':extItem.value +'%'}}
+                </text>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class="icon-wrapper" wx:if="{{isShowAddMoreBtn}}" catchtap="onAddMore">
+        <image class="more-icon" src="../../images/s-arrow-down.svg" />
+      </view>
+    </block>
+    <block wx:if="{{cardStyle === 'vertical'}}">
+      <!-- 样式二：竖排模式 -->
+      <view class="status-content-number-v2">
+        <view wx:for="{{info}}" wx:for-item="item" class="status-content-number-td vertical-bottom">
+          <view class="v2-float-1">
+            <view class="status-content-number-v1">
+              <text>{{item.label}}</text>
+            </view>
+            <view class="status-content-number-v2">
+              <text>{{item.value}}</text>
+            </view>
+          </view>
+          <view wx:for="{{item.ext}}" wx:for-item="extItem" class="v2-float-2">
+            <!-- class: increase decrease -->
+            <view class="status-content-number-v3">
+              <text class="content-label">{{extItem.label}}</text>
+              <text class="content-value {{extItem.color}}">
+                {{extItem.value === '-'?'-':extItem.value +'%'}}
+              </text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </block>
+  <block wx:elif="{{ret === 'loading'}}">
+    <view class="tips-warm">
+      <loading-component></loading-component>
+    </view>
+  </block>
+  <block wx:elif="{{ret === 'delay'}}">
+    <view class="tips-warm">数据延迟</view>
+  </block>
+  <block wx:elif="{{ret === 'empty'}}">
+    <view class="tips-warm">暂无数据</view>
+  </block>
+  <block wx:else>
+    <view class="tips-warm">{{tips || "系统错误"}}</view>
+  </block>
+</view>

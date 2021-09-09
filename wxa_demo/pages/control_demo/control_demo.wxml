@@ -1,0 +1,3 @@
+<!--pages/control_demo/control_demo.wxml-->
+
+<data-panel config="{{chartConfig}}" />

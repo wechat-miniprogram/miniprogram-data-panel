@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "data-panel": "../../dist/data-panel/data-panel"
+  }
+}

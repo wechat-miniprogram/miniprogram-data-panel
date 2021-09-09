@@ -1,0 +1,23 @@
+<!-- canvas-id 传入ec-canvas 组件使用 -->
+<view style="height:100%;width:100%" id="{{containerId}}">
+	<block wx:if="{{ret === 'delay'}}">
+		<view class="tips-warm">数据延迟</view>
+	</block>
+	<block wx:if="{{ret === 'empty'}}">
+		<view class="tips-warm">暂无数据</view>
+	</block>
+	<block wx:if="{{ret === 'fail'}}">
+		<view class="tips-warm">{{tips||"系统错误"}}</view>
+	</block>
+	<block wx:if="{{ret === 'loading'}}">
+		<view class="tips-warm">
+			<loading-component/>
+		</view>
+	</block>
+	<ec-canvas
+	 id="{{domId}}"
+	 canvas-id="{{domId}}"
+	 ec="{{ ec }}"
+	/>
+</view>
+

@@ -1,0 +1,50 @@
+<!-- id 给组件自己用的 -->
+<view class="linechart_container" id="{{containerId}}">
+	<block wx:if="{{ret === 'delay'}}">
+		<view class="tips-warm">数据延迟</view>
+	</block>
+	<block wx:if="{{ret === 'empty'}}">
+		<view class="tips-warm">暂无数据</view>
+	</block>
+	<block wx:if="{{ret === 'fail'}}">
+		<view class="tips-warm">{{tips||"系统错误"}}</view>
+	</block>
+	<block wx:if="{{ret === 'loading'}}">
+		<view class="tips-warm">
+			<loading-component/>
+		</view>
+	</block>
+	<!-- canvas-id 是 echarts需要传入的 -->
+	<ec-canvas
+	 id="{{domId}}"
+	 canvas-id="{{domId}}"
+	 ec="{{ ec }}"
+	/>
+
+	<!-- legend -->
+	<view wx:if="{{ret === 'succ' && !config.hideLegend}}" class="legend-container">
+		<view class="legend-inner">
+			<block wx:for="{{chartLegend}}" wx:for-index="idx" wx:key="label">
+				<view
+				 style="color:{{item.color}};background-color:{{item.backgroundColor}};"
+				 class="legend-item"
+				 catchtap="onClickLegend"
+				 data-idx="{{idx}}"
+				>
+					<view style="background-color:{{item.color}};" class="legend-item_icon" />
+					{{item.label}}
+				</view>
+			</block>
+		</view>
+	</view>
+	<!-- <ec-canvas
+		class="{{ret !== 'succ'?'dn':''}}"
+	 id="{{domId}}"
+	 canvas-id="{{domId}}"
+	 ec="{{ ec }}"
+	/> -->
+</view>
+
+
+
+

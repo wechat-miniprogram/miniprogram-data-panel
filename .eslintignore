@@ -1,0 +1,4 @@
+.eslintrc.js
+src/canvas/ec-canvas/wx-canvas.js
+src/canvas/ec-canvas/echarts.js
+src/control/dimension/half-screen-dialog/half-screen-dialog.js

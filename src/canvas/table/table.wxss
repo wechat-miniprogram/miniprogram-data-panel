@@ -1,0 +1,222 @@
+.table-layout {
+  /* padding: 0rpx 4rpx; */
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  border-radius: 16rpx;
+}
+
+
+
+.table-header {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: rgba(0,0,0,0.90);
+  letter-spacing: 0;
+  line-height: 1;
+  margin-bottom: 52rpx;
+}
+.table-item .table-item-v1 {
+  margin-bottom: 40rpx;
+}
+.table-item .table-item-v1 .table-item-label {
+  opacity: 0.3;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #000000;
+  line-height: 40rpx;
+  margin-right: 48rpx;
+  float: left;
+}
+.table-item .table-item-v1 .table-item-v2 text{
+  padding: 0 28rpx;
+  height: 48rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: rgba(0,0,0,0.90);
+  text-align: center;
+  line-height: 48rpx;
+  background: rgba(0,0,0,0.05);
+  border-radius: 24rpx;
+  border-radius: 24rpx;
+  display: inline-block;
+  margin-right: 16rpx;
+}
+.table-item .table-item-v1 .table-item-v2 .active {
+  color: #6467EF;
+}
+.table-item .table-item-v1 .table-item-v2 text:last-child {
+  margin-right: 0;
+}
+.table-content .table {
+  width: 100%;
+}
+
+.table-content .table .tr {
+  display: flex;
+}
+
+/* 表头 */
+.table-content .table th {
+  height: 80rpx;
+  font-size: 24rpx;
+  color: rgba(0,0,0,0.5);
+  letter-spacing: 0;
+  line-height: 80rpx;
+  background-color: #f7f7f7;
+}
+
+th:first-child {
+  padding-left: 5px;
+}
+th:last-child {
+  padding-right: 5px;
+
+}
+
+
+.td {
+  height: 80rpx;
+  font-size: 24rpx;
+  letter-spacing: 0;
+  font-size: 24rpx;
+  color: #000000;
+  opacity: 0.7;
+  letter-spacing: 0;
+  border-bottom: 1rpx solid #cccccc;
+  line-height: 80rpx;
+}
+
+/* 滚动的部分 */
+.tr-fixed .td {
+  opacity: 1;
+  color: rgba(0,0,0,0.7);
+  background-color: #ffffff;
+}
+
+.td:first-child {
+  padding-left: 5px;
+}
+
+.td:last-child {
+  padding-right: 5px;
+}
+
+.tbody .tr-fixed {
+  background-color: white;
+}
+
+
+
+.normal {
+  flex:1;
+}
+.rank{
+  width: 80rpx;
+  text-align: left;
+}
+
+.number{
+  min-width: 100rpx;
+  text-align: right;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.text{
+  flex: 1;
+  text-align: left;
+  overflow-x: auto;
+  white-space: nowrap;
+  min-width:100rpx;
+}
+
+.tr-fixed{
+  display: flex;
+  width: 200rpx;
+  position: absolute;
+  z-index: 9;
+}
+
+.tr-scroll{
+  display: flex;
+  padding-left: 200rpx;
+}
+
+.red{
+  color: #F74732;
+}
+.green{
+  color: #04C160;
+}
+
+.number-scroll{
+  min-width:104rpx;
+  /* width: initial;
+  max-width: initial; */
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-scroll{
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width:104rpx;
+  /* width: initial;
+  max-width: initial; */
+}
+
+.tr-table{
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.arrow {
+  width: 20rpx;
+  height: 20rpx;
+  vertical-align: middle;
+  margin-left: 8rpx;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.tips-warn{
+  font-family: 'PingFangSC-Regular','Microsoft Yahei';
+  font-size: 24rpx;
+  color: #888888;
+  line-height: 198rpx;
+  vertical-align: middle;
+  width: 100%;
+  text-align: center;
+  
+}
+
+.tips-warm {
+  font-family: 'PingFangSC-Regular','Microsoft Yahei';
+  font-size: 24rpx;
+  color: #888888;
+
+  line-height: 198rpx;
+  vertical-align: middle;
+
+  width: 100%;
+  text-align: center;
+}
+
+.loading-wrapper {
+  text-align: center;
+  position: relative;
+  top: 20rpx;
+}
+
+.loading-icon {
+  width: 52rpx;
+  height: 28rpx;
+}
+
+.ceil-comm {
+  min-width:144rpx;
+}

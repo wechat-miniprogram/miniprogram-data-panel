@@ -1,0 +1,31 @@
+{
+  "name": "miniprogram-data-panel",
+  "version": "1.0.0",
+  "description": "小程序的数据图表面板",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint --fix --quiet \"src/**/*.js\"",
+    "demo": "gulp demo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wechat-miniprogram/miniprogram-data-panel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wechat-miniprogram/miniprogram-data-panel/issues"
+  },
+  "homepage": "https://github.com/wechat-miniprogram/miniprogram-data-panel#readme",
+  "dependencies": {
+    "dayjs": "^1.10.6"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0"
+  }
+}

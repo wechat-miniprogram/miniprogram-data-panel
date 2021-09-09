@@ -1,0 +1,2 @@
+<!--pages/chart_demo/chart_demo.wxml-->
+<data-panel config="{{chartConfig}}" />

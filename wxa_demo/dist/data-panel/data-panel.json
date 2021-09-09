@@ -1,0 +1,12 @@
+{
+  "component": true,
+  "usingComponents": {
+    "control-component": "../control/control",
+    "line-chart": "../canvas/linechart/linechart",
+    "fenbu-chart": "../canvas/fenbuchart/fenbuchart",
+    "bar-chart": "../canvas/barchart/barchart",
+    "pie-chart": "../canvas/piechart/piechart",
+    "card-chart": "../canvas/card/card",
+    "table-chart": "../canvas/table/table"
+  }
+}

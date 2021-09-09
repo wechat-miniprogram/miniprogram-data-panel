@@ -1,0 +1,57 @@
+<view class="tit-2">
+  <view wx:if="{{false}}" class="lab">
+    <view class="lab-1">时间粒度</view>
+    <view class="lab-2">
+      <view>小时</view>
+      <view>日</view>
+      <view class="active">月</view>
+    </view>
+  </view>
+  <view class="lab">
+    <view class="lab-1">日期范围</view>
+    <view class="lab-2">
+      <block wx:for="{{config.btnOptions}}">
+        <view class="{{index === btnSelectIdx?'active':''}}" bindtap="onTapBtnOptions" data-index="{{index}}">
+          {{item.label}}
+        </view>
+      </block>
+    </view>
+    <view wx:if="{{config.btnOptions[btnSelectIdx].showDateRange}}" class="lab-3 toTime">
+      <picker mode="date" value="{{dateRange.startStr}}" start="{{limit.startStr}}" end="{{limit.endStr}}" bindchange="bindDateChange" data-key='start'>
+      <view class="lab-time-container">
+        <view class="picker">{{dateRange.startStr}}</view>
+        <image src="../../images/arrow.svg" class="arrow"></image>
+        <view class="lab-time-container-click"></view>
+      </view>
+
+      </picker>
+      <!-- <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+        <view class="picker">22:40</view>
+      </picker> -->
+      <text>—</text>
+      <picker mode="date" value="{{dateRange.endStr}}" start="{{limit.startStr}}" end="{{limit.endStr}}" bindchange="bindDateChange" data-key='end'>
+      <view class="lab-time-container">
+        <view class="picker">{{dateRange.endStr}}</view>
+        <image src="../../images/arrow.svg" class="arrow"></image>
+        <view class="lab-time-container-click"></view>
+      </view>
+      </picker>
+      <!-- <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+        <view class="picker">22:40</view>
+      </picker> -->
+    </view>
+  </view>
+  <view wx:if="{{isComp}}" class="lab">
+    <view class="lab-1">对比时段</view>
+    <view class="lab-3">
+      <date-picker />
+      <text>—</text>
+      <date-picker />
+    </view>
+    <view class="lab-3 toTime">
+      <date-picker />
+      <text>—</text>
+      <date-picker />
+    </view>
+  </view>
+</view>

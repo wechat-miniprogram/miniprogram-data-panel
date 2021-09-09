@@ -1,0 +1,42 @@
+
+<view class="wxadata-container" style="{{config.style && config.style.noMargin? 'margin:0; padding:0;':''}}">
+	<view wx:if="{{config.title && config.title.label}}" class="header">
+		<text class="title">{{config.title.label}}</text>
+		<text class="header-desc">{{headerDesc}}</text>
+		<image
+		 src="{{cardStyle === 'default' ? '../images/block_view.svg' : '../images/list_view.svg'}}"
+		 wx:if="{{config.title.icon}}"
+		 class="header-icon"
+		 bindtap="onChangeMode"
+		/>
+		<view class="header-icon-click" wx:if="{{config.title.icon}}" bindtap="onChangeMode"></view>
+	</view>
+
+	
+	<control-component initialize-config="{{config.control}}" ext-filter="{{extFilter}}" re-init="{{reInit}}" bindchange="onControlChange" />
+
+
+	<block wx:for="{{config.chart}}" wx:for-item="chartItem" wx:for-index="chartIdx" wx:key="index">
+		<view wx:if="{{chartItem.label}}" class="chartItem-label" >{{chartItem.label}}</view>
+		<view wx:if="{{chartItem.mode === 'linechart'}}" class="chart">
+			<line-chart id="dom-linechart-{{chartIdx}}" config="{{chartItem}}" config-key="{{config.title && config.title.label ||'' }}" />
+		</view>
+		<view wx:if="{{chartItem.mode === 'fenbuchart'}}" class="chart-fenbu">
+			<fenbu-chart id="dom-fenbuchart-{{chartIdx}}" config="{{chartItem}}" config-key="{{config.title && config.title.label ||'' }}" />
+		</view>
+		<view wx:if="{{chartItem.mode === 'barchart'}}" class="chart">
+			<bar-chart id="dom-barchart-{{chartIdx}}" config="{{chartItem}}" config-key="{{config.title && config.title.label ||'' }}"/>
+		</view>
+		<view wx:if="{{chartItem.mode === 'piechart'}}" class="chart-ext">
+			<pie-chart id="dom-piechart-{{chartIdx}}" config="{{chartItem}}" config-key="{{config.title && config.title.label ||'' }}" bind:postImage="postImage"/>
+		</view>
+		<!-- 小card -->
+		<view wx:if="{{chartItem.mode === 'card'}}" class="chart-ext">
+			<card-chart id="dom-card-{{chartIdx}}" card-style="{{cardStyle}}" config="{{chartItem}}" />
+		</view>
+		<view wx:if="{{chartItem.mode === 'table'}}" class="chart-ext" config-key="{{config.title && config.title.label ||'' }}" >
+			<table-chart id="dom-table-{{chartIdx}}" config="{{chartItem}}" bindclick="onClickTable" />
+		</view>
+	</block>
+</view>
+

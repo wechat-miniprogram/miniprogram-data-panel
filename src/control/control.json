@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "date-picker": "./date/date",
+    "dimension-picker": "./dimension/dimension",
+    "date-range-picker": "./date-range/date-range",
+    "time-range-picker": "./time-range/time-range",
+    "month-range-picker": "./month-range/month-range"
+  }
+}

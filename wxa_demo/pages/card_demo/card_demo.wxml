@@ -1,0 +1,5 @@
+<!--pages/card_demo/card_demo.wxml-->
+<data-panel config="{{cardConfig}}" />
+<data-panel config="{{cardV2}}" />
+<data-panel config="{{cardV3}}" />
+<data-panel config="{{cardV4}}" />

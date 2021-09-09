@@ -1,0 +1,36 @@
+<view class="tit-2">
+  <view class="lab">
+    <view class="lab-1">日期范围</view>
+    <view class="lab-2">
+      <block wx:for="{{config.btnOptions}}">
+        <view class="{{index === btnSelectIdx?'active':''}}" bindtap="onTapBtnOptions" data-index="{{index}}">
+          {{item.label}}
+        </view>
+      </block>
+    </view>
+    <view wx:if="{{config.btnOptions[btnSelectIdx].showDateRange}}" class="lab-3 toTime">
+      <picker mode="date" fields="month" value="{{dateRange.startStr}}" start="{{limit.startStr}}" end="{{limit.endStr}}" bindchange="bindDateChange" data-key='start'>
+        <view class="picker">{{dateRange.startStr}}</view>
+      </picker>
+      <image src="../../images/arrow.svg" class="arrow"></image>
+      <text>—</text>
+      <picker mode="date" fields="month" value="{{dateRange.endStr}}" start="{{limit.startStr}}" end="{{limit.endStr}}" bindchange="bindDateChange" data-key='end'>
+        <view class="picker">{{dateRange.endStr}}</view>
+      </picker>
+      <image src="../../images/arrow.svg" class="arrow"></image>
+    </view>
+  </view>
+  <view wx:if="{{isComp}}" class="lab">
+    <view class="lab-1">对比时段</view>
+    <view class="lab-3">
+      <date-picker />
+      <text>—</text>
+      <date-picker />
+    </view>
+    <view class="lab-3 toTime">
+      <date-picker />
+      <text>—</text>
+      <date-picker />
+    </view>
+  </view>
+</view>

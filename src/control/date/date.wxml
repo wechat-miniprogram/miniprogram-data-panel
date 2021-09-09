@@ -1,0 +1,32 @@
+<view class="tit-2">
+	<view class="lab">
+		<view class="lab-1">{{config.label}}</view>
+		<view class="lab-3" wx:if="{{showDatePicker}}">
+			<picker
+			 mode="date"
+			 value="{{date}}"
+			 fields="{{dateFields}}"
+			 start="{{limitStart}}"
+			 end="{{limitEnd}}"
+			 bindchange="bindDateChange"
+			>
+				<view class="picker">{{date}}</view>
+			</picker>
+		</view>
+		<view class="lab-3 {{showDatePicker?'split':''}}">
+			<block wx:if="{{showTimePicker}}">
+				<picker
+				 mode="time"
+				 value="{{time}}"
+				 start="00:00"
+				 end="23:59"
+				 bindchange="bindTimeChange"
+				>
+					<view class="picker">{{time}}</view>
+				</picker>
+			</block>
+			<image src="../../images/arrow.svg" class="arrow" />
+		</view>
+	</view>
+</view>
+

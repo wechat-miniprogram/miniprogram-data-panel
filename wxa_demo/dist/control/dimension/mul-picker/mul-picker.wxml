@@ -1,0 +1,41 @@
+<mp-halfScreenDialog show="{{opt.show}}" closabled="{{false}}" bindclose="onClose">
+	<view slot="title" class="title">
+		<view class="title-lt" bindtap="onClose">
+			<image class="close" src="../../../images/close.svg"></image>
+		</view>
+		<view class="title-ct">
+			<text class="tit-1">{{label}}</text>
+			<text class="tit-2"><text style="opacity: 0.3; color:#000000;">可选择{{maxOptional}}个对比指标</text> 已选{{selected}}
+			</text>
+		</view>
+		<view class="title-rt">
+
+		</view>
+	</view>
+	<scroll-view slot="desc" class="scroll-view" scroll-y="true">
+		<view class="pd108">
+			<block wx:for="{{opt.option}}" wx:for-item="item" wx:for-index="index" wx:key="key">
+				<view class="list-item" bindtap="onChoice" data-index="{{index}}">
+					<!-- 表示选中 -->
+					<image wx:if="{{item.select}}" src="../../../images/cell_on.svg" class="cell_pic"></image>
+					<image wx:if="{{!item.select}}" src="../../../images/cell_off.svg" class="cell_pic"></image>
+					<view class="list-item-title">{{item.label}}</view>
+					<view class="list-item-rt"></view>
+				</view>
+			</block>
+		</view>
+	</scroll-view>
+	<view class="buttonlist" slot="ope">
+		<view disabled="{{error}}" bindtap="onReset" class="reset">
+			重置
+		</view>
+		<view bindtap="onSubmit" class="afterComfirm">
+			确定
+		</view>
+		<view class="botton-container"></view>
+	</view>
+	<!-- <view disabled="{{error}}" bindtap="onSubmit" class="beforeComfirm">
+        确定
+      </view> -->
+
+</mp-halfScreenDialog>

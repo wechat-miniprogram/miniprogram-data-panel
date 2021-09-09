@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mul-picker": "./mul-picker/mul-picker"
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+      "date-picker": "../date/date"
+    }
+  }
+  

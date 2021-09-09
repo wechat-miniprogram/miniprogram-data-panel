@@ -1,0 +1,84 @@
+
+page {
+  --theme-color: #07c160;
+  --theme-color-bg: rgba(7, 193, 96, 0.1);
+}
+
+@import '../../theme.wxss';
+
+.dimension .lab {
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 33rpx; }
+
+.dimension .lab-1 {
+  white-space: nowrap;
+  opacity: 0.3;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #000000;
+  line-height: 40rpx;
+  display: inline-block;
+  margin-right: 48rpx;
+  /* float: left;  */
+}
+
+.dimension .lab-2 view {
+  display: inline-block;
+  float: left;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 24rpx;
+  border-radius: 24rpx;
+
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #000000;
+  opacity: 0.7;
+  text-align: center;
+  line-height: 48rpx;
+  height: 48rpx;
+
+  margin-right: 16rpx;
+  margin-bottom: 20rpx;
+}
+
+
+
+.dimension .lab-2 .active {
+  /* color: #00C777;
+  background: rgba(6, 173, 86, 0.06);  */
+  color: var(--theme-color);
+  background: var(--theme-color-bg)
+}
+
+.dimension .lab-3 {
+  opacity: 0.7;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #000000;
+  text-align: center;
+  display: inline-block;
+  float: left;
+  line-height: 40rpx;
+ }
+.dimension .lab-3 text {
+    display: inline-block;
+    margin-left: 18rpx;
+    margin-right: 20rpx;
+}
+.dimension .picker {
+  display: inline-block;
+}
+  
+.dimension .toTime {
+  margin-top: 33rpx;
+  margin-left: 144rpx; }
+
+.dimension .arrow {
+  width: 20rpx;
+  height: 20rpx;
+  vertical-align: middle;
+  margin-left: 8rpx; }

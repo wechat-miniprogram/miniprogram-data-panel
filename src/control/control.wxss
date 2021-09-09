@@ -1,0 +1,83 @@
+.body .tit-1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 53rpx; }
+  .body .tit-1 view {
+    display: inline-block;
+    border-radius: 8rpx;
+    border-radius: 8rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    letter-spacing: 0;
+    height: 64rpx;
+    text-align: center;
+    line-height: 64rpx;
+    width: 216rpx;
+    background: #F7F7F7;
+    opacity: 0.7;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #000000; }
+  .body .tit-1 .active {
+    color: #07C160;
+    background: rgba(7, 193, 96, 0.1); }
+
+.body .tit-2 .lab {
+  overflow: hidden;
+  margin-bottom: 33rpx; }
+
+.body .tit-2 .lab-1 {
+  opacity: 0.3;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #000000;
+  line-height: 40rpx;
+  display: inline-block;
+  margin-right: 48rpx;
+  float: left; }
+
+.body .tit-2 .lab-2 view {
+  display: inline-block;
+  float: left;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 24rpx;
+  border-radius: 24rpx;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #000000;
+  opacity: 0.7;
+  text-align: center;
+  line-height: 48rpx;
+  height: 48rpx;
+  margin-right: 16rpx; }
+
+.body .tit-2 .lab-2 .active {
+  color: #00C777;
+  background: rgba(6, 173, 86, 0.06); }
+
+.body .tit-2 .lab-3 {
+  opacity: 0.7;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #000000;
+  text-align: center;
+  display: inline-block;
+  float: left;
+  line-height: 40rpx; }
+  .body .tit-2 .lab-3 text {
+    display: inline-block;
+    margin-left: 18rpx;
+    margin-right: 20rpx; }
+
+.body .tit-2 .toTime {
+  margin-top: 33rpx;
+  margin-left: 144rpx; }
+
+.body .arrow {
+  width: 20rpx;
+  height: 20rpx;
+  vertical-align: middle;
+  margin-left: 8rpx; }

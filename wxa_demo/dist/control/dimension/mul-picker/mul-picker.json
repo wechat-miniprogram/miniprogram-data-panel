@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mp-halfScreenDialog": "../half-screen-dialog/half-screen-dialog"
+    
+  }
+}

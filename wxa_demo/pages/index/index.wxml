@@ -1,0 +1,11 @@
+<view wx:for="{{exampleList}}" class="choice_item">
+  <view class="choice_card" bindtap="onChoice" data-idx="{{index}}" data-key="{{item.key}}">
+    <!-- <view class="choice_logo">
+      <image src="{{item.image}}" />
+    </view> -->
+    <view class="choice_text">
+      <view class="mini_name">{{item.label}}</view>
+      <view class="mini_mail">{{item.desc}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+/* pages/card_demo/card_demo.wxss */
+
+page {
+  background-color: #f2f2f2;
+  padding-top: 20px;
+}

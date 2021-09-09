@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ec-canvas": "../ec-canvas/ec-canvas",
+    "loading-component": "../../loading/loading"
+  }
+}

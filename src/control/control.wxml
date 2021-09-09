@@ -1,0 +1,36 @@
+<view class="body" wx:if="{{config.filter && config.filter.length}}">
+	<view wx:if="{{config.cmpFilter && config.cmpFilter.option && config.cmpFilter.option.length}}" class="tit-1">
+		<block wx:for="{{config.cmpFilter.option}}">
+			<view class="{{item.selected?'active':''}}">{{item.label}}</view>
+		</block>
+	</view>
+	<view class="tit-2">
+		<block wx:for="{{config.filter}}" wx:key="*this">
+			<!-- 是否隐藏 -->
+			<view hidden="{{item.hidden}}">
+				<block wx:if="{{item.mode === 'dimension'}}">
+					<dimension-picker
+					 config="{{item}}"
+					 ext-filter="{{extFilter}}"
+					 is-comp="{{item.isComp || false}}"
+					 filter-index="{{index}}"
+					 bindsubmit="onChangeFilter"
+					/>
+				</block>
+				<block wx:if="{{item.mode === 'date'}}">
+					<date-picker config="{{item}}" filter-index="{{index}}" bindsubmit="onChangeFilter" />
+				</block>
+				<block wx:if="{{item.mode === 'date-range'}}">
+					<date-range-picker config="{{item}}" filter-index="{{index}}" bindsubmit="onChangeFilter" />
+				</block>
+				<block wx:if="{{item.mode ==='time-range'}}">
+					<time-range-picker config="{{item}}" filter-index="{{index}}" bindsubmit="onChangeFilter" />
+				</block>
+                <block wx:if="{{item.mode ==='month-range'}}">
+					<month-range-picker config="{{item}}" filter-index="{{index}}" bindsubmit="onChangeFilter" />
+				</block>
+			</view>
+		</block>
+	</view>
+</view>
+
