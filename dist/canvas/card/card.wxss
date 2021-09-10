@@ -1,0 +1,235 @@
+
+page {
+  --card-increase-color: #04C160;
+  --card-decrease-color: #F74732;
+}
+@import '../../theme.wxss';
+
+
+.status-content-number{
+  /* min-height: 198rpx; */
+  /* margin: 44rpx 0 54rpx 0; */
+
+  /* white-space:nowrap; */
+  overflow: hidden;
+
+  display: flex;
+}
+
+.status-content-number-td{
+  /*display: inline-block;*/
+  /*width: 165rpx;*/
+  flex: 1;
+  background-color: #FFFFFF;
+  padding-right: 25rpx;
+  /* margin-bottom: 28rpx; */
+  /*margin: 5rpx 0 5rpx 25rpx;*/
+  /* border-right: solid 0.3rpx #D8D8D8; */
+}
+
+.status-content-number-td:last-child{
+  /*margin-right: 25rpx;*/
+  border-right: none;
+  padding-right: 0
+}
+
+.status-content-number-v1{
+  opacity: 0.5;
+  font-size: 11px;
+  font-family: 'PingFangSC-Regular', 'PingFangSC-Light','.HelveticaNeueDeskInterface-MediumP4', 'Microsoft Yahei';
+  letter-spacing: 0;
+  color: #000000;
+  text-align: center;
+  white-space: nowrap;
+}
+.status-content-number-v2{
+  /* opacity: 0.9; */
+  font-family: PingFangSC-Medium;
+  font-size: 17px;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: 23.8px;
+  margin-top: -12px;
+  text-align: center;
+}
+.status-content-number-v3{
+  line-height: 38rpx;
+  font-size: 12px;
+  display: block;
+  font-weight: 500;
+  margin-top: -15px;
+  text-align: center;
+}
+
+.status-content-number-v4{
+  line-height: 38rpx;
+  font-size: 12px;
+  display: block;
+  font-weight: 500;
+}
+
+.status-content-money{
+  font-family: WeChatSansStd-Medium;
+}
+
+.increase{
+  color: var(--card-increase-color);
+  opacity: 1;
+}
+.decrease{
+  color: var(--card-decrease-color);
+  opacity: 1;
+}
+.default {
+  color: #000000;
+  opacity: 0.3;
+}
+
+.wording-float-right{
+  position: absolute;
+  padding-left: 496rpx;
+  line-height: 50rpx;
+  vertical-align: middle;
+  color: #888;
+  font-size: 11px;
+  font-family: 'PingFangSC-Regular', 'PingFangSC-Light','.HelveticaNeueDeskInterface-MediumP4', 'Microsoft Yahei';
+  overflow: hidden;
+}
+
+/* 表格特殊需求 */
+.ellipsis {
+  line-height: 88rpx;
+  width: 260rpx;
+  font-weight: 500;
+
+  padding: 0 26rpx;
+  text-align: left;
+  vertical-align: middle;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-left: 1rpx solid #ECECEC;
+  border-bottom: 1rpx solid #D8D8D8;
+}
+
+
+.tips-warm {
+  font-family: 'PingFangSC-Regular','Microsoft Yahei';
+  font-size: 12px;
+  color: #888888;
+
+  line-height: 198rpx;
+  vertical-align: middle;
+
+  width: 100%;
+  text-align: center;
+}
+
+.status-header {
+  width: 100%;
+  margin-bottom: 40rpx;
+}
+.status-header .lab-1 {
+  opacity: 0.9;
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: 42rpx;
+  margin-right: 16rpx;
+  font-weight: 900;
+}
+.status-header .lab-2{
+  opacity: 0.3;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: 39.2rpx;
+  margin-right: 10rpx;
+}
+.content-label {
+  opacity: 0.3;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #000000;
+  letter-spacing: 0;
+  margin-right: 8rpx;
+  line-height: 39.2rpx;
+}
+.content-value {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  letter-spacing: 0;
+  line-height: 39.2rpx;
+  width: 102rpx;
+  display: inline-block;
+  text-align: right;
+}
+
+.status-content-number-v2 >view {
+  overflow: hidden;
+  border-bottom: 1rpx solid #efefef;
+}
+
+.status-content-number-v2 >view:last-child {
+  border-bottom: 0;
+}
+.status-content-number-v2 .status-content-number-td:first-child {
+  margin-top: -40rpx;
+}
+/* tudo-2样式 */
+.v2-float-1 {
+  float: left;
+  width: 180rpx;
+  margin-right: 20rpx;
+  overflow: hidden;
+  /* height: 156rpx; */
+  vertical-align: middle;
+}
+.v2-float-2 {
+  float: left;
+  overflow: hidden;
+  /* height: 44px; */
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  margin-right: 20rpx;
+}
+.v2-float-2 .content-value {
+  width: 98rpx;
+}
+.v2-float-2:last-child {
+  margin-right: 0;
+}
+.v2-float-1 .status-content-number-v1 {
+  margin-top: 32rpx;
+  text-align: left;
+}
+.v2-float-1 .status-content-number-v2 {
+  margin: 0;
+  text-align: left;
+}
+
+.vertical-bottom {
+  padding-bottom: 16px;
+}
+.vertical-bottom:last-child {
+  padding-bottom: 0;
+}
+
+.top-30 {
+  margin-top: 30rpx;
+}
+
+.icon-wrapper {
+  text-align: center;
+  position: relative;
+  top: 20rpx;
+}
+
+.more-icon {
+  width: 52rpx;
+  height: 28rpx;
+}

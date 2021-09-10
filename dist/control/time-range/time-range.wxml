@@ -1,0 +1,84 @@
+<view class="tit-2">
+	<view wx:if="{{config.grainOptionsShow}}" class="lab-grain">
+		<view class="lab-1">时间粒度</view>
+		<view class="lab-2">
+			<block wx:for="{{config.grainOptions}}" wx:key="label">
+				<view class="{{index === grainSelectIdx?'active':''}}" bindtap="onTapGrainOptions" data-index="{{index}}">
+					{{item.label}}
+				</view>
+			</block>
+		</view>
+	</view>
+	<view class="lab">
+		<view class="lab-1">{{config.label}}</view>
+		<view class="lab-2" wx:if="{{config.btnOptionsShow}}">
+			<block wx:for="{{config.btnOptions}}" wx:key="label">
+				<view class="{{index === btnSelectIdx?'active':''}}" bindtap="onTapBtnOptions" data-index="{{index}}">
+					{{item.label}}
+				</view>
+			</block>
+		</view>
+		<!-- <view wx:if="{{config.btnOptions[btnSelectIdx].showDateRange}}" class="lab-3 toTime"> -->
+		<view class="lab-3 toTime">
+			<!-- 日期 -->
+			<picker
+			 mode="date"
+			 value="{{timeRange.startStr}}"
+			 start="{{limit.startStr}}"
+			 end="{{limit.endStr}}"
+			 bindchange="bindDateChange"
+			 data-key='start'
+			>
+				<view class="picker blank-view">{{timeRange.startShortStr}}</view>
+			</picker>
+			<!-- 具体 -->
+			<picker
+			 mode="time"
+			 value="{{timeRange.startHour}}"
+			 start="00:00"
+			 end="23:59"
+			 bindchange="bindTimeChange"
+			 data-key='start'
+			>
+				<view class="picker">{{timeRange.startHour}}</view>
+			</picker>
+			<image src="../../images/arrow.svg" class="arrow" />
+			<text>—</text>
+			<picker
+			 mode="date"
+			 value="{{timeRange.endStr}}"
+			 start="{{limit.startStr}}"
+			 end="{{limit.endStr}}"
+			 bindchange="bindDateChange"
+			 data-key='end'
+			>
+				<view class="picker blank-view">{{timeRange.endShortStr}}</view>
+			</picker>
+			<picker
+			 mode="time"
+			 value="{{timeRange.endHour}}"
+			 start="00:00"
+			 end="23:59"
+			 bindchange="bindTimeChange"
+			 data-key="end"
+			>
+				<view class="picker">{{timeRange.endHour}}</view>
+			</picker>
+			<image src="../../images/arrow.svg" class="arrow" />
+		</view>
+	</view>
+	<view wx:if="{{isComp}}" class="lab">
+		<view class="lab-1">对比时段</view>
+		<view class="lab-3">
+			<date-picker/>
+			<text>—</text>
+			<date-picker/>
+		</view>
+		<view class="lab-3 toTime">
+			<date-picker/>
+			<text>—</text>
+			<date-picker/>
+		</view>
+	</view>
+</view>
+

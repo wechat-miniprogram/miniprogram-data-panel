@@ -1,0 +1,26 @@
+page {
+  --chart-height: 500rpx;
+  --fenbu-chart-height: 600rpx;
+}
+@import '../theme.wxss';
+
+
+.tips-warm {
+  font-family: 'PingFangSC-Regular','Microsoft Yahei';
+  font-size: 24rpx;
+  color: #888888;
+
+  line-height: var(--chart-height);
+  vertical-align: middle;
+
+  width: calc(100vw - 64rpx);
+  text-align: center;
+  
+  position: absolute;
+  z-index: 100;
+
+  background-color: #ffffff;
+}
+.dn {
+  display: none;
+}

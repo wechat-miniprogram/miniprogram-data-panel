@@ -1,0 +1,4 @@
+<view>
+  <view class="tips-loadmore__loading"></view>
+  <view class="tips-loadmore__tips">加载中</view>
+</view>

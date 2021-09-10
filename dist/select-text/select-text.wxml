@@ -1,0 +1,26 @@
+<wxs src="./select-text.wxs" module="computed" />
+
+<view 
+  class="weui-select-text" 
+  style="{{computed.containerStyle({showToolTip, showCopyBtn, activeBgColor})}}"
+>
+  <text 
+    class="{{showToolTip?'text-active':''}}"
+    style="{{textStyle}}"
+    selectable="{{!showCopyBtn}}" 
+    space="{{space}}" 
+    decode="{{decode}}" 
+    catch:longpress="handleLongPress"
+  >{{value}}</text>
+
+  <view 
+    wx:if="{{showToolTip}}"
+    class="weui-tooltip weui-tooltip__{{placement}}"
+    style="z-index: {{zIndex}};"
+    catch:tap="handleCopy"
+  >
+    复制
+  </view>
+</view>
+
+<view wx:if="{{showToolTip}}" class="weui-tooltip_mask" style="z-index: {{zIndex-1}}" catchtap="handleCancel"></view>

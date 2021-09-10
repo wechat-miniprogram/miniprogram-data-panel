@@ -1,0 +1,99 @@
+<view class="pie-chart-container">
+	<view style="height:350rpx; width:100%" id="{{containerId}}">
+		<block wx:if="{{ret === 'delay'}}">
+			<view class="tips-warm">数据延迟</view>
+		</block>
+		<block wx:if="{{ret === 'empty'}}">
+			<view class="tips-warm">暂无数据</view>
+		</block>
+		<block wx:if="{{ret === 'fail'}}">
+			<view class="tips-warm">{{tips||"系统错误"}}</view>
+		</block>
+		<block wx:if="{{ret === 'loading'}}">
+			<view class="tips-warm">
+				<loading-component/>
+			</view>
+		</block>
+		<ec-canvas
+		 id="{{domId}}"
+		 canvas-id="{{config.canvasId || domId}}"
+		 ec="{{ ec }}"
+         genCanvasImage="{{config.genCanvasImage}}"
+         bind:postImage="postImage"
+		/>
+	</view>
+	<!-- legend -->
+	<view wx:if="{{ret === 'succ' && config.hasLegend}}" class="legend-container">
+		<view class="legend-inner">
+			<block wx:for="{{chartLegend}}" wx:for-index="idx" wx:key="label">
+				<view
+				 style="color:{{item.color}};background-color:{{item.backgroundColor}};"
+				 class="legend-item"
+				 catchtap="onClickLegend"
+				 data-idx="{{idx}}"
+				>
+					<view style="background-color:{{item.color}};" class="legend-item_icon" />
+					{{item.label}}
+				</view>
+			</block>
+		</view>
+	</view>
+
+	<!-- pie图还有个表格 -->
+	<view wx:if="{{showTable && ret === 'succ'}}" class="table-layout">
+		<view class="table-content" style="margin-top: 16px;">
+			<view class="table">
+				<view class="thead">
+					<view class="tr">
+						<block wx:for="{{tableHeader}}" wx:for-item="item" wx:for-index="idx">
+							<th
+							 class="ceil-comm {{item.style}}"
+							 bindtap="onTapTableHeader"
+							 data-row="-1"
+							 data-col="{{idx}}"
+							>
+								<text>{{item.value}}</text>
+								<!-- 可以排序: todo 箭头 -->
+								<block wx:if="{{item.sortType === 'double-sort'}}">
+									<block wx:if="{{item.isSort}}">
+										<text>{{item.isReduce?'↓':'↑'}}</text>
+										<!-- todo: 箭头 -->
+										<!-- <image class="arrow" src="../../images/arrow.svg" role="img"></image> -->
+									</block>
+									<block wx:else>
+										<text>↓↑</text>
+									</block>
+								</block>
+								<block wx:if="{{item.sortType === 'only-reduce'}}">
+									<text>↓</text>
+								</block>
+								<block wx:if="{{item.sortType === 'only-increase'}}">
+									<text>↑</text>
+								</block>
+							</th>
+						</block>
+					</view>
+				</view>
+				<view class="tbody">
+					<block wx:for="{{tableBody}}" wx:for-item="rowItem" wx:for-index="rowIdx">
+						<view class="tr">
+							<block wx:for="{{rowItem}}" wx:for-item="item" wx:for-index="colIdx">
+								<!-- style: text number normal -->
+								<view
+								 class="td ceil-comm {{item.style}}"
+								 style="{{item.css}}"
+								 bindtap="onTapTable"
+								 data-row="{{rowIdx}}"
+								 data-col="{{colIdx}}"
+								>
+									{{item.value}}{{item.valueUnit}}
+								</view>
+							</block>
+						</view>
+					</block>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+

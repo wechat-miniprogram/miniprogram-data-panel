@@ -61,15 +61,15 @@ Page({
     
             btnOptionsShow: false,
             btnOptions: [
-              { label: '今天', grain: 'day', value: 0, showDateRange: true },
-              { label: '近7天', grain: 'day', value: 30, showDateRange: true },
-              { label: '自定义', grain: '-', value: -1, showDateRange: true }],
+              {label: '今天', grain: 'day', value: 0, showDateRange: true},
+              {label: '近7天', grain: 'day', value: 30, showDateRange: true},
+              {label: '自定义', grain: '-', value: -1, showDateRange: true}],
     
             grainOptionsShow: false, // 展示颗粒度选择
             grainOptions: [
-              { label: '60分钟', grain: 'minute', value: 60 },
-              { label: '5分钟', grain: 'minute', value: 5 },
-              { label: '1分钟', grain: 'minute', value: 1 },
+              {label: '60分钟', grain: 'minute', value: 60},
+              {label: '5分钟', grain: 'minute', value: 5},
+              {label: '1分钟', grain: 'minute', value: 1},
             ],
     
             default: {
@@ -144,56 +144,56 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

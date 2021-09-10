@@ -4,8 +4,9 @@
   "description": "小程序的数据图表面板",
   "main": "index.js",
   "scripts": {
-    "eslint": "eslint --fix --quiet \"src/**/*.js\"",
-    "demo": "gulp demo"
+    "eslint": "eslint --fix --quiet \"src/**/*.js\" && eslint --fix --quiet \"wxa_demo/**/*.js\"",
+    "demo": "gulp demo",
+    "build": "tnpm run eslint && gulp demo"
   },
   "repository": {
     "type": "git",

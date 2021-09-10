@@ -1,0 +1,199 @@
+<view class="table-layout">
+	<view class="table-content">
+		<view wx:if="{{ret === 'succ' && !config.fixColCnt}}" class="table">
+			<!-- 表头 -->
+			<view class="thead">
+				<view class="tr">
+					<block wx:for="{{header}}" wx:for-item="item" wx:for-index="idx">
+						<th
+						 class="ceil-comm {{item.style}}"
+						 style="{{item.css}}"
+						 bindtap="onTapTableHeader"
+						 data-row="-1"
+						 data-col="{{idx}}"
+						>
+							<text>{{item.value}}</text>
+							<block wx:if="{{item.sortType === 'double-sort'}}">
+								<block wx:if="{{item.isSort}}">
+									<text>{{item.isReduce?'↓':'↑'}}</text>
+								</block>
+								<block wx:else>
+									<text>↓↑</text>
+								</block>
+							</block>
+							<block wx:if="{{item.sortType === 'only-reduce'}}">
+								<text>↓</text>
+							</block>
+							<block wx:if="{{item.sortType === 'only-increase'}}">
+								<text>↑</text>
+							</block>
+						</th>
+					</block>
+				</view>
+			</view>
+			<view class="tbody">
+				<block wx:for="{{body}}" wx:for-item="rowItem" wx:for-index="rowIdx">
+					<view class="tr">
+						<block wx:for="{{rowItem}}" wx:for-item="item" wx:for-index="colIdx">
+							<!-- style: text number normal -->
+							<view
+							 class="td ceil-comm {{item.style}}"
+							 style="{{header[colIdx].css}} {{item.css}}"
+							 bindtap="onTapTable"
+							 bindlongtap="onLongPresssTable"
+							 data-row="{{rowIdx}}"
+							 data-col="{{colIdx}}"
+							>
+								{{item.value}}{{item.valueUnit}}
+							</view>
+						</block>
+					</view>
+				</block>
+				<view class="loading-wrapper" wx:if="{{isShowAddMoreBtn}}" catchtap="onAddMore">
+					<image class="loading-icon" src="../../images/s-arrow-down.svg" />
+				</view>
+			</view>
+		</view>
+		<view wx:if="{{ret === 'succ' && config.fixColCnt > 0}}">
+			<view class="table tr-table">
+				<view class="thead">
+					<view class="tr">
+						<!-- 前N列固定 -->
+						<view class="tr-fixed">
+							<block
+							 wx:for="{{header}}"
+							 wx:for-item="item"
+							 wx:for-index="idx"
+							 wx:if="{{idx < config.fixColCnt}}"
+							>
+								<th
+								 class="{{item.style}}"
+								 style="{{header[idx].css}}"
+								 bindtap="onTapTableHeader"
+								 data-row="-1"
+								 data-col="{{idx}}"
+								>
+									<text>{{item.value}}</text>
+									<block wx:if="{{item.sortType === 'double-sort'}}">
+										<!-- 支持升降序 -->
+										<block wx:if="{{item.isSort}}">
+											<text>{{item.isReduce?'↓':'↑'}}</text>
+										</block>
+										<block wx:else>
+											<text>↓↑</text>
+										</block>
+									</block>
+									<!-- 支持降序 -->
+									<block wx:if="{{item.sortType === 'only-reduce'}}">
+										<text>↓</text>
+									</block>
+									<!-- 支持升序 -->
+									<block wx:if="{{item.sortType === 'only-increase'}}">
+										<text>↑</text>
+									</block>
+								</th>
+							</block>
+						</view>
+						<!-- 后面滚动 -->
+						<view class="tr-scroll">
+							<block
+							 wx:for="{{header}}"
+							 wx:for-item="item"
+							 wx:for-index="idx"
+							 wx:if="{{idx >= config.fixColCnt}}"
+							>
+								<th
+								 class="{{item.style}}-scroll"
+								 style="{{item.css}}"
+								 bindtap="onTapTableHeader"
+								 data-row="-1"
+								 data-col="{{idx}}"
+								>
+									<text>{{item.value}}</text>
+									<!-- 可以排序: todo 箭头 -->
+									<block wx:if="{{item.sortType === 'double-sort'}}">
+										<block wx:if="{{item.isSort}}">
+											<text>{{item.isReduce?'↓':'↑'}}</text>
+										</block>
+										<block wx:else>
+											<text>↓↑</text>
+										</block>
+									</block>
+									<block wx:if="{{item.sortType === 'only-reduce'}}">
+										<text>↓</text>
+									</block>
+									<block wx:if="{{item.sortType === 'only-increase'}}">
+										<text>↑</text>
+									</block>
+								</th>
+							</block>
+						</view>
+					</view>
+				</view>
+				<view class="tbody">
+					<block wx:for="{{body}}" wx:for-item="rowItem" wx:for-index="rowIdx">
+						<view class="tr">
+							<!-- 前N列固定 -->
+							<view class="tr-fixed">
+								<block
+								 wx:for="{{rowItem}}"
+								 wx:for-item="item"
+								 wx:for-index="colIdx"
+								 wx:if="{{colIdx < config.fixColCnt}}"
+								>
+									<!-- style: text number normal -->
+									<view
+									 class="td {{item.style}} "
+									 style="{{header[colIdx].css}} {{item.css}}"
+									 bindtap="onTapTable"
+									 bindlongtap="onLongPresssTable"
+									 data-row="{{rowIdx}}"
+									 data-col="{{colIdx}}"
+									 data-length="{{body.length}}"
+									>
+										{{item.value}}{{item.valueUnit}}
+									</view>
+								</block>
+							</view>
+							<!-- 其他滚动 -->
+							<view class="tr-scroll">
+								<block
+								 wx:for="{{rowItem}}"
+								 wx:for-item="item"
+								 wx:for-index="colIdx"
+								 wx:if="{{colIdx >= config.fixColCnt}}"
+								>
+									<!-- style: text number normal -->
+									<view
+									 class="td {{item.style}}-scroll"
+									 style="{{item.css}}{{header[colIdx].css}}"
+									 bindtap="onTapTable"
+									 bindlongtap="onLongPresssTable"
+									 data-row="{{rowIdx}}"
+									 data-col="{{colIdx}}"
+									>
+										{{item.value}}{{item.valueUnit}}
+									</view>
+								</block>
+							</view>
+						</view>
+					</block>
+				</view>
+			</view>
+
+			<view class="loading-wrapper" wx:if="{{isShowAddMoreBtn}}" catchtap="onAddMore">
+				<image class="loading-icon" src="../../images/s-arrow-down.svg" />
+			</view>
+		</view>
+		<view wx:if="{{ret === 'empty'}}" class="tips-warn">暂无数据</view>
+		<block wx:if="{{ret === 'fail'}}">
+			<view class="tips-warm">{{tips||"系统错误"}}</view>
+		</block>
+		<block wx:if="{{ret === 'loading'}}">
+			<view class="tips-warm">
+				<loading-component/>
+			</view>
+		</block>
+	</view>
+</view>
+

@@ -1,0 +1,37 @@
+<view class="dimension">
+  <block></block>
+  <view wx:if="{{isComp}}" class="lab">
+    <view class="lab-1">{{config.label}}</view>
+    <!-- btn -->
+    <view wx:if="{{config.style==='btn'}}" class="lab-2" bindtap="bindBtnCompChange">
+      <view wx:for="{{option}}" wx:key="*this" class="{{item.select?'active':''}}" data-index="{{index}}">
+        {{item.label}}
+      </view>
+    </view>
+    <!-- comp picker -->
+    <view wx:if="{{config.style==='picker'}}" class="lab-3" bindtap="bindPickerCompShow">
+      {{selectLabel}}
+      <image src="../../images/arrow.svg" class="arrow"></image>
+    </view>
+  </view>
+  <!-- 单选 -->
+  <view wx:else class="lab">
+    <view class="lab-1">{{config.label}}</view>
+    <!-- btn -->
+    <view wx:if="{{config.style==='btn'}}" class="lab-2">
+      <view wx:for="{{option}}" wx:key="*this" class="{{index===selectIdx?'active':''}}" bindtap="bindBtnChange" data-index="{{index}}">
+        {{item.label}}
+      </view>
+    </view>
+    <!-- picker -->
+    <view wx:if="{{config.style==='picker'}}" class="lab-3">
+      <picker mode="selector" range="{{option}}" range-key="label" value="{{selectIdx}}" bindchange="bindPickerChange">
+        <view class="picker">{{option[selectIdx].label}}</view>
+        <!-- todo:需要改一下，目前会换行 -->
+        <image src="../../images/arrow.svg" class="arrow"></image>
+      </picker>
+      <!-- <image src="../../images/arrow.svg" class="arrow"></image> -->
+    </view>
+  </view>
+</view>
+<mul-picker opt="{{multiPicker}}" bindclose="bindPickerCompHide" bindsubmit="bindPickerCompChange" label="{{config.label}}" max-optional="{{config.maxOptional}}"/>

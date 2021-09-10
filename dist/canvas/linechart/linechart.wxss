@@ -1,0 +1,9 @@
+
+@import '../chart.wxss';
+@import '../chart_legend.wxss';
+
+
+.linechart_container {
+    width: 100%;
+    height: calc(100% - 90rpx)
+}

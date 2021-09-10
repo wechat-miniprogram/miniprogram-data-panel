@@ -159,7 +159,7 @@ export function sprintf(...args) {
   result.replace('%s', '')
 
   i = 1
-  while (true) {
+  while (i < length + 1) {
     para = args[i]
     if (para === undefined) { // 0 也是可能的替换数字
       break
