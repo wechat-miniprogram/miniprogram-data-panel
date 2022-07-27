@@ -24,8 +24,6 @@
 | dimession(type=button)  | 按钮选择  | src/control/dimension/dimension.js
 | dimession(type=picker)  | 下拉框选择  | src/control/dimension/dimension.js
 
-效果图：
-![效果图](http://tapd.oa.com/tfl/captures/2021-09/tapd_personalword_1100000000000471677_base64_1631107680_52.png)
 
 ### 2.图表
 
@@ -38,8 +36,6 @@
 | fenbuchart | 分布图 |  src/canvas/fenbuchart/fenbuchart.js
 | table | 表格 | src/canvas/table/table.js
 
-
-![效果图](http://tapd.oa.com/tfl/captures/2021-09/tapd_personalword_1100000000000471677_base64_1631107487_88.png)
 
 
 
